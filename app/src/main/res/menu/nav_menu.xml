@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeFragment"
-        android:title="Home"
-        android:icon="@drawable/homeicon"/>
+        android:title=""
+        android:icon="@drawable/home"/>
     <item
         android:id="@+id/searchFragment"
-        android:title="Search"
-        android:icon="@drawable/test"/>
+        android:title=""
+        android:icon="@drawable/search"/>
     <item
         android:id="@+id/chatFragment"
-        android:title="Chat"
-        android:icon="@drawable/chaticon"/>
+        android:title=""
+        android:icon="@drawable/chat"/>
     <item
         android:id="@+id/myUnikFragment"
-        android:title="My U'nik"
-        android:icon="@drawable/myunikicon"/>
+        android:title=""
+        android:icon="@drawable/user"/>
 </menu>
