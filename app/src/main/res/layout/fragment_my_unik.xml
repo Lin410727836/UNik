@@ -68,18 +68,31 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/circleImageView"
-                            android:layout_width="@dimen/_100sdp"
-                            android:layout_height="@dimen/_100sdp"
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout2"
+                            android:layout_width="@dimen/_106sdp"
+                            android:layout_height="@dimen/_106sdp"
                             android:layout_marginTop="10dp"
-                            android:src="@drawable/cat"
-                            app:civ_border_color="#6A00FF"
-                            app:civ_border_width="2dp"
+                            android:background="@drawable/user_stroke_gradient"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/circleImageView"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:src="@drawable/people"
+                                app:civ_border_color="#FFFFFF"
+                                app:civ_border_width="4dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                         <TextView
                             android:id="@+id/textView"
@@ -92,19 +105,19 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
 
                         <TextView
                             android:id="@+id/textView2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="@dimen/_15sdp"
                             android:layout_marginTop="10dp"
                             android:text="31.1 K"
                             android:textColor="#000000"
                             android:textSize="@dimen/_10sdp"
-                            app:layout_constraintStart_toStartOf="@+id/circleImageView"
+                            app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
                             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
                         <TextView
@@ -112,10 +125,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:layout_marginLeft="10dp"
                             android:text="Followers"
                             android:textSize="@dimen/_10sdp"
                             app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                            app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toEndOf="@+id/textView2"
                             app:layout_constraintTop_toTopOf="@+id/textView2"
                             app:layout_constraintVertical_bias="0.0" />
