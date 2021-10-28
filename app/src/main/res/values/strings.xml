@@ -5,4 +5,14 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string-array name="spinnerstyle">
+        <item>New</item>
+        <item>Hot</item>
+        <item>Follow</item>
+    </string-array>
+    <string-array name="language">
+        <item>EN</item>
+        <item>VIE</item>
+        <item>TC</item>
+    </string-array>
 </resources>
