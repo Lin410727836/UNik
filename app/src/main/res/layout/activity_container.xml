@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".ContainerActivity">
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,6 +19,7 @@
         app:itemIconSize="33dp"
 
         app:menu="@menu/nav_menu"/>
+
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"

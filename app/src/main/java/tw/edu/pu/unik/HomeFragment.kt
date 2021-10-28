@@ -1,32 +1,25 @@
 package tw.edu.pu.unik
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_home.*
+import tw.edu.pu.unik.adapter.LiveStreamAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
+    private  val TAG = "HomeFragment"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        Log.d(TAG, "onCreate: ")
+
     }
 
     override fun onCreateView(
@@ -37,23 +30,44 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.d(TAG, "onViewCreated: ")
+
+        recyclerview.layoutManager = GridLayoutManager(this.context,2)
+        val fakedata = mutableListOf(R.drawable.livestreamone,R.drawable.livestreamtwo
+            ,R.drawable.livestreamthree,R.drawable.livestreamfoure
+            ,R.drawable.livestreamfive,R.drawable.livestreamsix)
+        val liveStreamAdapter = LiveStreamAdapter(fakedata)
+        recyclerview.adapter = liveStreamAdapter
+        liveStreamAdapter.isLiveStream = true
+
+        liveStreamButton.setOnClickListener {
+            Log.d(TAG, "onViewCreated: liveStreamButton.setOnClickListener")
+            recyclerview.layoutManager = GridLayoutManager(this.context,2)
+            val fakedata = mutableListOf(R.drawable.livestreamone,R.drawable.livestreamtwo
+                ,R.drawable.livestreamthree,R.drawable.livestreamfoure
+                ,R.drawable.livestreamfive,R.drawable.livestreamsix)
+            val liveStreamAdapter = LiveStreamAdapter(fakedata)
+
+            recyclerview.adapter = liveStreamAdapter
+            liveStreamAdapter.update()
+            liveStreamAdapter.isLiveStream = true
+        }
+        posts.setOnClickListener {
+            Log.d(TAG, "onViewCreated: posts.setOnClickListener")
+            recyclerview.layoutManager = LinearLayoutManager(this.context)
+            val fakedata: MutableList<Data> = mutableListOf(Data(R.drawable.userone,"Mavlin chen","Gold Member from Taiwan",
+                "Must buy for boba tea lovers!","If you are a boba milk tea lover, you must try this one! The taste is sooo good! Order right here --> @Bobachic.TW!",
+                R.drawable.b1,R.drawable.b2,R.drawable.b3,"24","2"),
+            Data(R.drawable.usertwo,"Cindy Wang","Silver Member from Taiwan",
+                "If you don’t have this one, u r out!","@BingZhen ‘s new natural #Lipstick, I use the 01 color and it’s soooo incredibly gorgeous! I confirm that u r not gonna be regret to buy it. Let’s check it out!",
+                R.drawable.item1,R.drawable.item2,R.drawable.item3,"18","5"))
+           val liveStreamAdapter = LiveStreamAdapter(fakedata)
+
+            recyclerview.adapter = liveStreamAdapter
+            liveStreamAdapter.update()
+            liveStreamAdapter.isLiveStream = false
+        }
     }
 }
