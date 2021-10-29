@@ -12,7 +12,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MyUnikFragment">
+        tools:context=".ui.user.MyUnikFragment">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -204,14 +204,11 @@
                             app:layout_constraintTop_toTopOf="@+id/textView6" />
 
                         <Button
-                            android:id="@+id/button"
                             android:layout_width="0dp"
                             android:layout_height="@dimen/_36sdp"
                             android:layout_marginStart="20dp"
-                            android:layout_marginLeft="20dp"
                             android:layout_marginTop="15dp"
                             android:layout_marginEnd="20dp"
-                            android:layout_marginRight="20dp"
                             android:layout_marginBottom="15dp"
                             android:background="@drawable/pink_btn"
                             android:backgroundTint="#00000000"

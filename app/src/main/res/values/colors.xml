@@ -9,5 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="selectedIconColor">#FFABAB</color>
     <color name="defaultIconColor">#6B6B6B</color>
-
+    <color name="pink100">#D42B64</color>
 </resources>

@@ -23,6 +23,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        buildTypes.each {
+            it.buildConfigField 'String', 'app_id', app_id
+            it.buildConfigField 'String', 'app_lic', app_lic
+            it.buildConfigField 'String', 'channel_name', channel_name
+            it.buildConfigField 'String', 'token', token
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -55,4 +62,5 @@ dependencies {
     implementation"androidx.viewpager2:viewpager2:1.0.0"
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'io.agora.rtc:full-sdk:3.5.0'
 }
