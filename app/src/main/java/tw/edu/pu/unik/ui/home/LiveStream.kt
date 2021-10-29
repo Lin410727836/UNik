@@ -33,6 +33,7 @@ class LiveStream : Fragment() , FragmentTouch{
     }
     private lateinit var binding: FragmentLiveStreamBinding
     private lateinit var mRtcEngine: RtcEngine
+    private lateinit var video: SurfaceView
     private lateinit var mRtcEventHandler: IRtcEngineEventHandler
     private var isRead = false
     private var isShare = false
@@ -63,7 +64,7 @@ class LiveStream : Fragment() , FragmentTouch{
             override fun onJoinChannelSuccess(channel: String?, uid: Int, elapsed: Int) {
                 super.onJoinChannelSuccess(channel, uid, elapsed)
                 Log.d("UUID2", "onUserJoined: $uid")
-                val v = VideoCanvas(binding.video, VideoCanvas.RENDER_MODE_FIT, 1)
+                val v = VideoCanvas(video, VideoCanvas.RENDER_MODE_FIT, 1)
                 if (uid != 1)
                     mRtcEngine.setupRemoteVideo(v)
                 else
@@ -145,7 +146,7 @@ class LiveStream : Fragment() , FragmentTouch{
     private fun initEngineAndJoinChannel() {
         initializeAgoraEngine()
         val config = VideoEncoderConfiguration(
-            VideoEncoderConfiguration.VD_840x480,
+            VideoEncoderConfiguration.VD_1280x720,
             VideoEncoderConfiguration.FRAME_RATE.FRAME_RATE_FPS_30,
             VideoEncoderConfiguration.STANDARD_BITRATE,
             VideoEncoderConfiguration.ORIENTATION_MODE.ORIENTATION_MODE_FIXED_PORTRAIT
@@ -160,6 +161,9 @@ class LiveStream : Fragment() , FragmentTouch{
         else {
             mRtcEngine.setClientRole(IRtcEngineEventHandler.ClientRole.CLIENT_ROLE_AUDIENCE)
         }
+        video = RtcEngine.CreateRendererView(requireContext())
+        video.setZOrderMediaOverlay(true)
+        binding.video.addView(video)
         joinChannel()
     }
 
