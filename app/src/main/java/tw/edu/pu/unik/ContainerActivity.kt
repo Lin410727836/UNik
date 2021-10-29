@@ -1,29 +1,46 @@
 package tw.edu.pu.unik
 
-import android.content.Intent
+import android.Manifest
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
+import androidx.core.app.ActivityCompat
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_container.*
-
+import tw.edu.pu.unik.ui.home.LiveStream
 
 class ContainerActivity : AppCompatActivity() {
+    lateinit var navHost: NavHostFragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_container)
-
         bottomNavigationSetup()
-
     }
 
-    fun bottomNavigationSetup() {
+    private fun bottomNavigationSetup() {
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        navHost = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navController = navHost.navController
+        bottomNavigationView.setupWithNavController(navController)
+    }
 
-    val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-    val navController = navHostFragment.navController
-    bottomNavigationView.setupWithNavController(navController)
 
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        return if(navHost.childFragmentManager.fragments[0] is LiveStream) {
+            val f = navHost.childFragmentManager.fragments[0] as LiveStream
+            if (ev != null) {
+                f.fragmentTouch(ev)
+            }else
+                super.dispatchTouchEvent(ev)
+        }else
+            super.dispatchTouchEvent(ev)
+    }
+
+    fun touch(ev: MotionEvent?): Boolean {
+        return super.dispatchTouchEvent(ev)
     }
         /*bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId) {

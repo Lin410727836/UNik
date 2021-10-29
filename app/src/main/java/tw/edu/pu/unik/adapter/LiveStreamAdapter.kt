@@ -8,21 +8,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import de.hdodenhof.circleimageview.CircleImageView
 import tw.edu.pu.unik.Data
 import tw.edu.pu.unik.R
 import tw.edu.pu.unik.databinding.UserPostItemBinding
 import tw.edu.pu.unik.databinding.UserStoryItemBinding
+import tw.edu.pu.unik.ui.home.LiveStream
 
-class LiveStreamAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder> {
+class LiveStreamAdapter(var fakedata: List<Any>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val TAG = "LiveStreamAdapter"
      var isLiveStream = true
-    var fakedata: List<Any>
-    constructor(fakedata: List<Any>):super() {
-        Log.d(TAG, ": ")
-        this.fakedata = fakedata
-    }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder.itemViewType) {
@@ -30,6 +27,10 @@ class LiveStreamAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 val liveStreamViewHolder = holder as LiveStreamViewHolder
                 liveStreamViewHolder.bind(fakedata[position])
                 Log.d(TAG, "onBindViewHolder: "+fakedata[position])
+                holder.itemView.setOnClickListener {
+                    LiveStream.uid = position + 1
+                    Navigation.findNavController(holder.itemView).navigate(R.id.action_homeFragment_to_liveStream)
+                }
             }
             else -> {
                 val postsViewHolder = holder as PostsViewHolder
