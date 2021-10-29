@@ -13,6 +13,7 @@
         <action
             android:id="@+id/action_homeFragment_to_liveStream"
             app:destination="@id/liveStream" />
+
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -33,5 +34,15 @@
         android:id="@+id/liveStream"
         android:name="tw.edu.pu.unik.ui.home.LiveStream"
         android:label="LiveStream"
-        tools:layout="@layout/fragment_live_stream"/>
+        tools:layout="@layout/fragment_live_stream">
+        <action
+            android:id="@+id/action_liveStream_to_OrderInformation"
+            app:destination="@id/OrderInformation"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/OrderInformation"
+        android:name="tw.edu.pu.unik.OrderInformationFragment"
+        android:label="LiveStream"
+        tools:layout="@layout/fragment_orderinformation"/>
 </navigation>

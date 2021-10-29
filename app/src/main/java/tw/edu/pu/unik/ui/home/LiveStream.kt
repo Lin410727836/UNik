@@ -22,11 +22,16 @@ import io.agora.rtc.video.VideoEncoderConfiguration
 import tw.edu.pu.unik.BuildConfig
 import android.util.DisplayMetrics
 import android.view.*
+import androidx.fragment.app.FragmentManager
+import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import kotlinx.android.synthetic.main.fragment_live_stream.*
 import tw.edu.pu.unik.ContainerActivity
 
 
 class LiveStream : Fragment() , FragmentTouch{
+    private  val TAG = "LiveStream"
     companion object{
         @JvmStatic
         var uid = 0
@@ -89,6 +94,10 @@ class LiveStream : Fragment() , FragmentTouch{
                 hideGood()
             }
             isRead = !isRead
+        }
+        binding.button.setOnClickListener {
+            Log.d(TAG, "onViewCreated: ")
+            findNavController(view).navigate(R.id.action_liveStream_to_OrderInformation)
         }
 
     }

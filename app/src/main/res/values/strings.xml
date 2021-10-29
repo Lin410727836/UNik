@@ -10,6 +10,14 @@
         <item>Hot</item>
         <item>Follow</item>
     </string-array>
+    <string-array name="spinnercountry">
+        <item>Taiwan</item>
+
+    </string-array>
+    <string-array name="spinnerpay">
+        <item>Pay By U-Coin</item>
+
+    </string-array>
     <string-array name="language">
         <item>EN</item>
         <item>VIE</item>
