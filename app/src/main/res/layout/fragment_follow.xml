@@ -73,7 +73,7 @@
             app:layout_constraintTop_toBottomOf="@+id/notificationtoolbar"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:checkedButton="@id/socialbutton"
+            android:checkedButton="@id/followbutton"
 
             android:orientation="horizontal">
             <RadioButton
@@ -109,7 +109,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:src="@drawable/pinkcircle"
+                android:src="@drawable/greencircle"
                 android:layout_width="@dimen/_40sdp"
 
                 android:layout_height="@dimen/_40sdp"/>
@@ -118,7 +118,7 @@
                 android:id="@+id/socialtv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GROUP 1"
+                android:text="AMBA.TW"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"
@@ -130,7 +130,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="lindy share A Shop"
+                android:text="感謝關注AMBA.TW"
                 android:textColor="@color/defaultIconColor"
                 android:textSize="@dimen/_15sdp"
                 android:textStyle="bold"
@@ -151,7 +151,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:src="@drawable/purplecircle"
+                android:src="@drawable/blackcircle"
                 android:layout_width="@dimen/_40sdp"
 
                 android:layout_height="@dimen/_40sdp"/>
@@ -160,7 +160,7 @@
                 android:id="@+id/socialtv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GROUP 2"
+                android:text="FLOWER SHOP"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"
@@ -172,7 +172,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sunika commented on your post"
+                android:text="10.10優惠來了,低消$99,免運費"
                 android:textColor="@color/defaultIconColor"
                 android:textSize="@dimen/_15sdp"
                 android:textStyle="bold"

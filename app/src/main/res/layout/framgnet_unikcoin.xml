@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/notificationtoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:src="@drawable/x"/>
+
+        <TextView
+            android:text="notificaiton"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/title"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_baseline_settings_24"
+            app:tint="#B8B8B8"
+            android:layout_marginRight="20dp"
+            tools:layout_editor_absoluteX="387dp"
+            tools:layout_editor_absoluteY="16dp"
+            android:layout_marginEnd="20dp" />
+    </androidx.appcompat.widget.Toolbar>
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/notificationtoolbar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:checkedButton="@id/unikcoinbutton"
+
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/orderbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+
+            android:textSize="@dimen/_12sdp"
+            android:text="Order"
+            android:background="@drawable/user_radio"/>
+        <RadioButton
+            android:id="@+id/promotionbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textSize="@dimen/_12sdp"
+            android:text="promotion"
+            android:background="@drawable/user_radio"/>
+        <RadioButton
+            android:id="@+id/unikcoinbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textSize="@dimen/_12sdp"
+            android:text="UNIK Coin"
+            android:background="@drawable/user_radio"/>
+        <RadioButton
+            android:id="@+id/announcementbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textSize="@dimen/_14sdp"
+            android:text="Announce"
+            android:background="@drawable/user_radio"/>
+    </RadioGroup>
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@+id/radiogroup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="#EEEEEE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="活動"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="#FFF5F5"
+            android:layout_weight="0.2"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/gift"
+                android:layout_width="@dimen/_30sdp"
+
+                android:layout_height="@dimen/_30sdp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nT200 GOT $2000 UNIK Coin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/time1"
+                />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/time1"
+                android:background="#FFF"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_20sdp">
+                <TextView
+                    android:text="活動時間 09/09 ~ 10/10"
+                    android:textColor="#985656"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2021/09/01"
+                android:textColor="@color/defaultIconColor"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="#FFF5F5"
+            android:layout_weight="0.2"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/videocam"
+                android:layout_width="@dimen/_30sdp"
+
+                android:layout_height="@dimen/_30sdp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Watch 2 Live Streaming and got $20 UNIK coin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/time2"
+                />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/time2"
+                android:background="#FFF"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_20sdp">
+                <TextView
+                    android:text="活動時間 08/01 ~ 10/01"
+                    android:textColor="#985656"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2021/07/20"
+                android:textColor="@color/defaultIconColor"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

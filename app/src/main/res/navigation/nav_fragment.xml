@@ -16,6 +16,26 @@
 
     </fragment>
     <fragment
+        android:id="@+id/Social"
+        android:name="tw.edu.pu.unik.SocialFragment"
+        android:label="Social"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_SocialFragment_to_Follow"
+            app:destination="@id/Follow" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/Follow"
+        android:name="tw.edu.pu.unik.FollowFragment"
+        android:label="Follow"
+        tools:layout="@layout/fragment_follow" >
+        <action
+            android:id="@+id/action_FollowFragment_to_Social"
+            app:destination="@id/Social" />
+
+    </fragment>
+    <fragment
         android:id="@+id/searchFragment"
         android:name="tw.edu.pu.unik.ui.search.SearchFragment"
         android:label="fragment_search"
@@ -24,7 +44,52 @@
         android:id="@+id/chatFragment"
         android:name="tw.edu.pu.unik.ui.chat.ChatFragment"
         android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_chatFragment_to_Order"
+            app:destination="@id/Order" />
+        <action
+            android:id="@+id/action_chatFragment_to_Social"
+            app:destination="@id/Social" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/Order"
+        android:name="tw.edu.pu.unik.OrderFragment"
+        android:label="Order"
+        tools:layout="@layout/framgnet_order">
+        <action
+            android:id="@+id/action_OrderFragment_to_Promotion"
+            app:destination="@id/Promotion" />
+        <action
+            android:id="@+id/action_OrderFragment_to_UnikCoin"
+            app:destination="@id/UnikCoin" />
+    </fragment>
+    <fragment
+        android:id="@+id/Promotion"
+        android:name="tw.edu.pu.unik.PromotionFragment"
+        android:label="Promotion"
+        tools:layout="@layout/framgnet_promotion">
+        <action
+            android:id="@+id/action_PromotionFragment_to_Order"
+            app:destination="@id/Order" />
+        <action
+            android:id="@+id/action_PromotionFragment_to_UnikCoin"
+            app:destination="@id/UnikCoin" />
+    </fragment>
+    <fragment
+        android:id="@+id/UnikCoin"
+        android:name="tw.edu.pu.unik.UnikCoinFragment"
+        android:label="UnikCoin"
+        tools:layout="@layout/framgnet_unikcoin">
+        <action
+            android:id="@+id/action_UnikCoinFragment_to_Order"
+            app:destination="@id/Order" />
+        <action
+            android:id="@+id/action_UnikCoinFragment_to_Promotion"
+            app:destination="@id/Promotion" />
+    </fragment>
     <fragment
         android:id="@+id/myUnikFragment"
         android:name="tw.edu.pu.unik.ui.user.MyUnikFragment"
